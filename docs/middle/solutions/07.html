@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>중등부 7번 풀이</title>
+  <script type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      background-color: #fefefe;
+      color: #222;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      margin-top: 2em;
+    }
+
+    ul, ol {
+      margin-left: 1.2em;
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5em 0;
+    }
+
+    th, td {
+      border: 1px solid #aaa;
+      padding: 8px 10px;
+      text-align: center;
+    }
+
+    .box {
+      background: #f8f8ff;
+      padding: 10px;
+      margin: 1em 0;
+      border-left: 4px solid #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌲 중등부 7번: 최소 신장 트리 (8점)</h1>
+
+  <h2>📘 문제 요약</h2>
+  <p>
+    아래 그래프의 <strong>최소 신장 트리(MST)</strong>의 가중치 합을 구하시오.
+  </p>
+  <p>
+    MST는 그래프의 모든 정점을 연결하면서 <strong>총 간선 가중치의 합이 가장 작도록</strong> 구성된 트리입니다.
+  </p>
+
+  <h2>🧠 풀이 방법: 크루스칼 알고리즘</h2>
+
+  <div class="box">
+    <strong>✔️ 크루스칼 알고리즘이란?</strong><br>
+    간선의 가중치가 주어진 그래프에서<br>
+    <strong>가중치가 가장 작은 간선부터 하나씩 선택</strong>하면서,<br>
+    <strong>사이클(빙글빙글 돌 수 있는 구조)이 생기지 않도록 연결</strong>해 나가는 방법입니다.
+    <br><br>
+    💡 모든 정점이 연결되면 멈춥니다.
+  </div>
+
+  <h2>📊 간선 목록 (가중치 순 정렬)</h2>
+
+  <table>
+    <thead>
+      <tr><th>간선</th><th>가중치</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>A - F</td><td>10</td></tr>
+      <tr><td>C - D</td><td>12</td></tr>
+      <tr><td>B - G</td><td>14</td></tr>
+      <tr><td>B - C</td><td>16</td></tr>
+      <tr><td>D - G</td><td>18</td></tr>
+      <tr><td>D - E</td><td>22</td></tr>
+      <tr><td>E - G</td><td>24</td></tr>
+      <tr><td>E - F</td><td>25</td></tr>
+      <tr><td>A - B</td><td>28</td></tr>
+    </tbody>
+  </table>
+
+  <h2>🔍 간선 선택 과정 (사이클이 생기지 않도록!)</h2>
+
+  <ol>
+    <li>A - F (10) ✅</li>
+    <li>C - D (12) ✅</li>
+    <li>B - G (14) ✅</li>
+    <li>B - C (16) ✅</li>
+    <li>D - G (18) ❌ (B, C, D, G가 이미 연결되어 있어 사이클 발생)</li>
+    <li>D - E (22) ✅</li>
+    <li>E - G (24) ❌ (E와 G가 이미 연결됨)</li>
+    <li>E - F (25) ✅</li>
+  </ol>
+
+  <p>
+    이때 모든 정점 A~G가 하나의 트리로 연결됩니다.
+  </p>
+
+  <h2>✅ 최종 선택된 간선들</h2>
+  <ul>
+    <li>A - F (10)</li>
+    <li>C - D (12)</li>
+    <li>B - G (14)</li>
+    <li>B - C (16)</li>
+    <li>D - E (22)</li>
+    <li>E - F (25)</li>
+  </ul>
+
+  <h2>🟢 최종 정답</h2>
+  <p>
+    모든 간선의 가중치를 더하면:
+  </p>
+
+  \[
+  10 + 12 + 14 + 16 + 22 + 25 = \boxed{99}
+  \]
+
+  <p><strong>정답: \(\boxed{99}\)</strong></p>
+</body>
+</html>
