@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>중등부 4번 풀이</title>
+  <script type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      background-color: #fefefe;
+      color: #222;
+    }
+
+    h1, h2, h3, h4 {
+      text-align: center;
+      margin-top: 2em;
+    }
+
+    ul, ol {
+      margin-left: 1.2em;
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔢 중등부 4번: 진법 변환 (7점)</h1>
+
+  <h2>📘 문제 요약</h2>
+  <p>
+    16진수 <code>A6E4F3</code>을 <strong>8진수</strong>로 바꾸고,  
+    그때 나타나는 <strong>각 숫자의 합</strong>을 구하시오.
+  </p>
+
+  <h2>🧠 풀이 과정</h2>
+
+  <h3>1️⃣ 16진수 → 2진수 변환</h3>
+  <p>각 16진수 자릿값을 4자리 이진수로 바꿉니다:</p>
+
+  <ul>
+    <li>A = 1010</li>
+    <li>6 = 0110</li>
+    <li>E = 1110</li>
+    <li>4 = 0100</li>
+    <li>F = 1111</li>
+    <li>3 = 0011</li>
+  </ul>
+
+  <p>→ 이진수 전체:</p>
+
+  \[
+  101001101110010011110011
+  \]
+
+  <h3>2️⃣ 2진수 → 8진수 변환</h3>
+  <p>3자리씩 끊기 위해 맨 앞에 0을 추가합니다:</p>
+
+  \[
+  010\ 100\ 110\ 111\ 001\ 001\ 111\ 001\ 1
+  \Rightarrow \text{(정확하게 자르면)}
+  \]
+  \[
+  101\ 001\ 101\ 110\ 010\ 011\ 110\ 011
+  \Rightarrow \boxed{5\ 1\ 5\ 6\ 2\ 3\ 6\ 3}_8
+  \]
+
+  <p>→ 변환된 8진수는 <code>51562363</code></p>
+
+  <h3>3️⃣ 각 자리 숫자의 합 계산</h3>
+
+  \[
+  5 + 1 + 5 + 6 + 2 + 3 + 6 + 3 = \boxed{31}
+  \]
+
+  <h2>🟢 최종 정답: <strong>31</strong></h2>
+</body>
+</html>
