@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>중등부 10번 풀이</title>
+  <script type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      background-color: #fefefe;
+      color: #222;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-top: 2em;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 1em auto;
+    }
+
+    th, td {
+      border: 1px solid #aaa;
+      padding: 6px 10px;
+      text-align: center;
+    }
+
+    .yes {
+      background-color: #dfffdc;
+    }
+
+    .no {
+      background-color: #fff3f3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔁 중등부 10번: 화살표 따라가기 (10점)</h1>
+
+  <h2>📘 문제 요약</h2>
+  <p>
+    1번부터 15번까지 정점이 있고,  
+    각 정점은 하나의 다음 정점으로 연결된 화살표를 가지고 있어요.
+  </p>
+  <p>
+    어떤 정점 v에서 시작해 화살표를 <strong>101번</strong> 따라갔을 때  
+    <strong>정점 5 또는 9</strong>에 도착하게 되는 모든 정점을 찾아서,  
+    그 번호를 모두 더한 값을 구하는 문제예요.
+  </p>
+
+  <h2>📍 연결 구조</h2>
+  <pre>
+1 → 4       9 → 2       13 → 3
+2 → 5      10 → 1       14 → 7
+3 → 9      11 → 10      15 → 8
+4 → 8      12 → 7
+5 → 4       6 → 1
+8 → 9       7 → 2
+  </pre>
+
+  <h2>🧠 풀이 방법</h2>
+  <ul>
+    <li>각 정점에서 출발해서 계속 화살표를 따라가면 결국 정점 5나 9를 지나치게 돼요.</li>
+    <li>그때 <strong>몇 번째 이동에서 처음 5 또는 9를 지나치는지</strong>를 기록해요.</li>
+    <li>
+      만약 그 횟수가 <strong>1, 6, 11, 16, ...처럼 5씩 더한 수</strong>라면,  
+      101번째 이동할 때도 다시 그 자리(5 또는 9)에 오게 돼요!
+    </li>
+  </ul>
+
+  <h2>📊 정점별 확인표</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>정점</th>
+        <th>처음 5 도달 위치</th>
+        <th>처음 9 도달 위치</th>
+        <th>조건 만족?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="no"><td>1</td><td>5</td><td>3</td><td>❌</td></tr>
+      <tr class="yes"><td>2</td><td>1</td><td>4</td><td>✅</td></tr>
+      <tr class="yes"><td>3</td><td>3</td><td>1</td><td>✅</td></tr>
+      <tr class="no"><td>4</td><td>4</td><td>2</td><td>❌</td></tr>
+      <tr class="no"><td>5</td><td>0</td><td>3</td><td>❌</td></tr>
+      <tr class="yes"><td>6</td><td>6</td><td>4</td><td>✅</td></tr>
+      <tr class="no"><td>7</td><td>2</td><td>5</td><td>❌</td></tr>
+      <tr class="yes"><td>8</td><td>3</td><td>1</td><td>✅</td></tr>
+      <tr class="no"><td>9</td><td>2</td><td>0</td><td>❌</td></tr>
+      <tr class="yes"><td>10</td><td>6</td><td>4</td><td>✅</td></tr>
+      <tr class="no"><td>11</td><td>7</td><td>5</td><td>❌</td></tr>
+      <tr class="yes"><td>12</td><td>3</td><td>6</td><td>✅</td></tr>
+      <tr class="no"><td>13</td><td>4</td><td>2</td><td>❌</td></tr>
+      <tr class="yes"><td>14</td><td>3</td><td>6</td><td>✅</td></tr>
+      <tr class="no"><td>15</td><td>4</td><td>2</td><td>❌</td></tr>
+    </tbody>
+  </table>
+
+  <h2>✅ 정답</h2>
+  <p>
+    조건을 만족하는 정점은:  
+    <strong>2, 3, 6, 8, 10, 12, 14</strong>
+  </p>
+  <p>
+    이들의 합:  
+    \[
+    2 + 3 + 6 + 8 + 10 + 12 + 14 = \boxed{55}
+    \]
+  </p>
+
+</body>
+</html>
