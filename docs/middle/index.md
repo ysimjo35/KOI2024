@@ -4,7 +4,7 @@
 
 ## 📄 문제
 
-- 👉 [중등부 문제 PDF 보기](../../assets/m1-problems.pdf)
+- 👉 [중등부 문제 PDF 보기](/KOI2024/assets/m1-problems.pdf)
 
 ## 📘 해설 목록
 
