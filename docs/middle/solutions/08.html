@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>중등부 8번 풀이</title>
+  <script type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      background-color: #fefefe;
+      color: #222;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      margin-top: 2em;
+    }
+
+    ul, ol {
+      margin-left: 1.2em;
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .step {
+      background: #f8f8ff;
+      border-left: 4px solid #888;
+      padding: 10px;
+      margin: 1em 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🕵️‍♂️ 중등부 8번: 기사, 도둑, 바보 (8점)</h1>
+
+  <h2>📘 문제 요약</h2>
+  <p>
+    세 사람 A, B, C가 있습니다. 각각의 사람은 <strong>기사(항상 진실), 도둑(항상 거짓), 바보(진실 또는 거짓)</strong> 중 하나입니다. 역할은 서로 다릅니다.
+  </p>
+
+  <p>세 사람의 발언은 다음과 같습니다:</p>
+  <ul>
+    <li><strong>A:</strong> 우리 중 한 명 이상이 바보이다.</li>
+    <li><strong>B:</strong> A는 바보가 아니다.</li>
+    <li><strong>C:</strong> 나는 도둑이다.</li>
+  </ul>
+
+  <h2>🧠 논리적 추론으로 좁혀가기</h2>
+
+  <div class="step">
+    <strong>1️⃣ C의 말: "나는 도둑이다"</strong><br>
+    이 말이 참이면 → C는 도둑이어야 함 → 도둑이 참말을 한 것 → ❌ 모순 발생<br>
+    이 말이 거짓이면 → 실제로 C는 도둑이 아님 → OK<br><br>
+    그런데 만약 C가 <strong>기사</strong>라면, 그 말은 참이어야 하므로 역시 ❌ 모순<br>
+    ✅ 따라서 <strong>C는 반드시 바보</strong>입니다.
+  </div>
+
+  <div class="step">
+    <strong>2️⃣ A의 말: "우리 중 한 명 이상이 바보이다"</strong><br>
+    현재 C가 바보로 확정되었으므로 이 말은 <strong>참</strong>입니다.<br>
+    이 말이 참이 되기 위해서는 A는 <strong>기사나 바보</strong>여야 합니다.<br>
+    (도둑은 거짓말만 해야 하므로 참말을 할 수 없음)  
+    ✅ 따라서 <strong>A는 기사 또는 바보</strong>입니다.
+  </div>
+
+  <div class="step">
+    <strong>3️⃣ B의 말: "A는 바보가 아니다"</strong><br>
+    이 말이 참이면 → A는 기사 또는 도둑<br>
+    이 말이 거짓이면 → A는 바보여야 함<br>
+    → 따라서 <strong>B의 말이 참인지 거짓인지에 따라 A의 역할도 결정됨</strong><br>
+    <br>
+    이제 B가 기사/도둑/바보인 경우를 나눠보며 가능한 조합을 따져보자.
+  </div>
+
+  <h2>📋 가능한 조합 정리 (C = 바보 고정)</h2>
+
+  <ul>
+    <li><strong>Case 1:</strong> A = 기사, B = 도둑  
+      → A의 말: 참 ✅ / B의 말: 거짓 → A는 바보여야 하지만 기사 ❌ → <strong>모순</strong>
+    </li>
+    <li><strong>Case 2:</strong> A = 기사, B = 기사  
+      → A의 말: 참 ✅ / B의 말: 참 → A는 기사 → ✅ 가능
+    </li>
+    <li><strong>Case 3:</strong> A = 기사, B = 바보  
+      → A는 참 / B는 말 상관없음 → ✅ 가능
+    </li>
+    <li><strong>Case 4:</strong> A = 바보, B = 도둑  
+      → A 말은 참 / 도둑인 B는 “A는 바보 아니다”라고 말했는데 → 거짓이어야 함 → 실제로 A는 바보 → ✅ 가능
+    </li>
+    <li><strong>Case 5:</strong> A = 바보, B = 기사  
+      → A 말은 참 / 기사 B가 “A는 바보 아니다” → 참이 되어야 하는데 실제 A는 바보 → ❌ 모순
+    </li>
+    <li><strong>Case 6:</strong> A = 바보, B = 바보  
+      → 바보는 뭐든 말할 수 있음 → ✅ 가능
+    </li>
+  </ul>
+
+  <h2>✅ 최종 정답</h2>
+  <p><strong>정답: \(\boxed{4}\)</strong></p>
+
+  
+</body>
+</html>
