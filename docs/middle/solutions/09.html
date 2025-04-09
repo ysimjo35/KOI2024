@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>중등부 9번 풀이</title>
+  <script type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      background-color: #fefefe;
+      color: #222;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-top: 2em;
+    }
+
+    ul, ol {
+      margin-left: 1.2em;
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .step {
+      background: #f8f8ff;
+      border-left: 4px solid #888;
+      padding: 10px;
+      margin: 1.2em 0;
+    }
+
+    .candidates {
+      margin: 0.3em 0 0.8em 0.5em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧮 중등부 9번: 인버전의 개수 (10점)</h1>
+
+  <h2>📘 문제 요약</h2>
+  <p>
+    1부터 8까지의 수가 한 번씩 등장하는 수열 \(a_1, a_2, \dots, a_8\)이 있고,<br>
+    각 \(c_i\)는 <strong>자기 앞에 있으면서 자신보다 큰 수의 개수</strong>를 나타낸다.<br>
+    다음과 같은 인버전 수 \(c\)가 주어졌을 때, 수열 \(a\)를 구하시오.
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>i</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+      <tr><th>c<sub>i</sub></th><td>0</td><td>1</td><td>0</td><td>3</td><td>0</td><td>5</td><td>2</td><td>3</td></tr>
+    </thead>
+  </table>
+
+  <h2>🧠 풀이 전략</h2>
+  <p>
+    \(c_i\)는 “<strong>자기 앞에 있는 수 중 자기보다 큰 수의 개수</strong>”이다.<br>
+    이 정의를 이용해, <strong>오른쪽부터 왼쪽으로</strong> 수를 하나씩 채워나가며 유일한 수열을 구성할 수 있다.
+  </p>
+
+  <div class="step">
+    <strong>1️⃣ a₈ = 5</strong><br>
+    <div class="candidates">남은 후보: [1, 2, 3, 4, 5, 6, 7, 8]</div>
+    \(c_8 = 3\) → a₈ 앞에 자신보다 큰 수가 3개 있어야 한다.<br>
+    → 남은 수 중 자신보다 큰 수가 3개인 수는 5
+  </div>
+
+  <div class="step">
+    <strong>2️⃣ a₇ = 6</strong><br>
+    <div class="candidates">남은 후보: [1, 2, 3, 4, 6, 7, 8]</div>
+    \(c_7 = 2\) → 자신보다 큰 수가 앞에 2개 있어야 함<br>
+    → 남은 수 중 6이 조건을 만족
+  </div>
+
+  <div class="step">
+    <strong>3️⃣ a₆ = 1</strong><br>
+    <div class="candidates">남은 후보: [1, 2, 3, 4, 7, 8]</div>
+    \(c_6 = 5\) → 앞에 있는 모든 수가 자신보다 커야 함 → a₆는 가장 작은 수 1
+  </div>
+
+  <div class="step">
+    <strong>4️⃣ a₅ = 8</strong><br>
+    <div class="candidates">남은 후보: [2, 3, 4, 7, 8]</div>
+    \(c_5 = 0\) → 앞에 자신보다 큰 수가 없어야 함 → 가장 큰 수 8
+  </div>
+
+  <div class="step">
+    <strong>5️⃣ a₄ = 2</strong><br>
+    <div class="candidates">남은 후보: [2, 3, 4, 7]</div>
+    \(c_4 = 3\) → 앞에 자신보다 큰 수 3개 있어야 함 → 2가 적절
+  </div>
+
+  <div class="step">
+    <strong>6️⃣ a₃ = 7</strong><br>
+    <div class="candidates">남은 후보: [3, 4, 7]</div>
+    \(c_3 = 0\) → 앞에 자신보다 큰 수 없음 → 가장 큰 수 7
+  </div>
+
+  <div class="step">
+    <strong>7️⃣ a₂ = 3</strong><br>
+    <div class="candidates">남은 후보: [3, 4]</div>
+    \(c_2 = 1\) → 앞에 자신보다 큰 수 1개 필요 → 3이 적절
+  </div>
+
+  <div class="step">
+    <strong>8️⃣ a₁ = 4</strong><br>
+    <div class="candidates">남은 후보: [4]</div>
+    마지막 남은 수 = 4
+  </div>
+
+  <h2>✅ 최종 수열</h2>
+  <p>
+    \[
+    \boxed{4\ 3\ 7\ 2\ 8\ 1\ 6\ 5}
+    \]
+  </p>
+
+  <h2>🟢 정답</h2>
+  <p><strong>정답: \(\boxed{43728165}\)</strong></p>
+</body>
+</html>
