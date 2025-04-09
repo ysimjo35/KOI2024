@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>중등부 1번 풀이</title>
+  <script type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+  <h1>🧠 중등부 1번: 두 개씩 곱하기 (4점)</h1>
+
+  <h2>📘 문제 요약</h2>
+  <p>
+    1부터 6까지의 수 중에서 <strong>서로 다른 두 수</strong> \( x < y \)를 골라 곱한 값을 모두 더하시오.
+  </p>
+  <ul>
+    <li>① 21</li>
+    <li>② 91</li>
+    <li>③ <strong>175 ✅</strong></li>
+    <li>④ 350</li>
+    <li>⑤ 441</li>
+  </ul>
+
+  <hr>
+
+  <h2>✅ 풀이</h2>
+  <p>가능한 모든 \( (x, y) \) 쌍을 나열하여 \( x \times y \)를 구하고, 이들의 합을 계산합니다.</p>
+
+  <p>총 조합 수는 \( \binom{6}{2} = 15 \)개입니다.</p>
+
+  <table border="1" cellpadding="4">
+    <tr><th>x</th><th>y</th><th>x×y</th></tr>
+    <tr><td>1</td><td>2</td><td>2</td></tr>
+    <tr><td>1</td><td>3</td><td>3</td></tr>
+    <tr><td>1</td><td>4</td><td>4</td></tr>
+    <tr><td>1</td><td>5</td><td>5</td></tr>
+    <tr><td>1</td><td>6</td><td>6</td></tr>
+    <tr><td>2</td><td>3</td><td>6</td></tr>
+    <tr><td>2</td><td>4</td><td>8</td></tr>
+    <tr><td>2</td><td>5</td><td>10</td></tr>
+    <tr><td>2</td><td>6</td><td>12</td></tr>
+    <tr><td>3</td><td>4</td><td>12</td></tr>
+    <tr><td>3</td><td>5</td><td>15</td></tr>
+    <tr><td>3</td><td>6</td><td>18</td></tr>
+    <tr><td>4</td><td>5</td><td>20</td></tr>
+    <tr><td>4</td><td>6</td><td>24</td></tr>
+    <tr><td>5</td><td>6</td><td>30</td></tr>
+  </table>
+
+  <p>모두 더하면:</p>
+
+  <p>
+    \( 2 + 3 + 4 + 5 + 6 + 6 + 8 + 10 + 12 + 12 + 15 + 18 + 20 + 24 + 30 = \boxed{175} \)
+  </p>
+
+  <hr>
+
+  <h2>💡 수학적 해법</h2>
+
+  <p>수식으로는 다음과 같이 표현할 수 있습니다:</p>
+
+  <p>
+    \[
+    \sum_{1 \le x < y \le 6} x \cdot y = \frac{1}{2} \left( \left( \sum x \right)^2 - \sum x^2 \right)
+    \]
+  </p>
+
+  <p>
+    - \( \sum x = 1 + 2 + 3 + 4 + 5 + 6 = 21 \) <br>
+    - \( \sum x^2 = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 + 6^2 = 91 \)
+  </p>
+
+  <p>
+    \[
+    \Rightarrow \frac{1}{2} (21^2 - 91) = \frac{1}{2} \cdot 350 = \boxed{175}
+    \]
+  </p>
+
+  <hr>
+
+  <h2>🟢 정답: <strong>175</strong></h2>
+
+</body>
+</html>
