@@ -4,17 +4,19 @@
 
 ## 📄 문제
 
-- 👉 [중등부 문제 PDF 보기](/KOI2024/assets/m1-problems.pdf)
+- 👉 [중등부 문제 PDF 보기](../assets/m1-problems.pdf)
 
 ## 📘 해설 목록
 
 | 번호 | 해설 |
 |------|------|
-| 1번 | [풀이 보기](./solutions/01.md) |
-| 2번 | [풀이 보기](./solutions/02.md) |
-| 3번 | [풀이 보기](./solutions/03.md) |
+| 1번 | [풀이 보기](./solutions/01.html) |
+| 2번 | [풀이 보기](./solutions/02.html) |
+| 3번 | [풀이 보기](./solutions/03.html) |
+| 4번 | [풀이 보기](./solutions/04.html) |
+| 5번 | [풀이 보기](./solutions/05.html) |
 | ... | ... |
-| 20번 | [풀이 보기](./solutions/20.md) |
+| 20번 | [풀이 보기](./solutions/20.html) |
 
 > 💡 풀이 파일은 순차적으로 업데이트됩니다.
 
@@ -23,7 +25,7 @@
 ## 🗂 구성 안내
 
 - `assets/`: 문제 PDF 파일이 저장된 폴더
-- `solutions/`: 문제별 해설 마크다운 파일이 저장된 폴더
+- `solutions/`: 문제별 해설 HTML 파일이 저장된 폴더
 
 ## 🔙 돌아가기
 
