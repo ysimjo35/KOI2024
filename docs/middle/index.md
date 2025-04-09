@@ -1,31 +1,37 @@
-# 🧠 2024 KOI 중등부 문제 및 풀이
+# 🧠 2024 KOI 중등부 풀이 모음
 
-이 페이지는 2024년도 한국정보올림피아드 1차 대회 **중등부** 문제 및 해설을 정리한 공간입니다.
-
-## 📄 문제
-
-- 👉 [중등부 문제 PDF 보기](../assets/m1-problems.pdf)
-
-## 📘 해설 목록
-
-| 번호 | 해설 |
-|------|------|
-| 1번 | [풀이 보기](./solutions/01.html) |
-| 2번 | [풀이 보기](./solutions/02.html) |
-| 3번 | [풀이 보기](./solutions/03.html) |
-| 4번 | [풀이 보기](./solutions/04.html) |
-| 5번 | [풀이 보기](./solutions/05.html) |
-| ... | ... |
-| 20번 | [풀이 보기](./solutions/20.html) |
-
-> 💡 풀이 파일은 순차적으로 업데이트됩니다.
+아래는 2024 한국정보올림피아드 1차 대회 중등부 20문제에 대한 풀이입니다.  
+각 문제를 클릭하면 자세한 HTML 해설 페이지로 이동합니다.
 
 ---
 
-## 🗂 구성 안내
+## 📋 문제별 풀이 목록
 
-- `assets/`: 문제 PDF 파일이 저장된 폴더
-- `solutions/`: 문제별 해설 HTML 파일이 저장된 폴더
+- [문제 01번 풀이](solutions/01.html)
+- [문제 02번 풀이](solutions/02.html)
+- [문제 03번 풀이](solutions/03.html)
+- [문제 04번 풀이](solutions/04.html)
+- [문제 05번 풀이](solutions/05.html)
+- [문제 06번 풀이](solutions/06.html)
+- [문제 07번 풀이](solutions/07.html)
+- [문제 08번 풀이](solutions/08.html)
+- [문제 09번 풀이](solutions/09.html)
+- [문제 10번 풀이](solutions/10.html)
+- [문제 11번 풀이](solutions/11.html)
+- [문제 12번 풀이](solutions/12.html)
+- [문제 13번 풀이](solutions/13.html)
+- [문제 14번 풀이](solutions/14.html)
+- [문제 15번 풀이](solutions/15.html)
+- [문제 16번 풀이](solutions/16.html)
+- [문제 17번 풀이](solutions/17.html)
+- [문제 18번 풀이](solutions/18.html)
+- [문제 19번 풀이](solutions/19.html)
+- [문제 20번 풀이](solutions/20.html)
+
+---
+
+📌 풀이에 포함된 수식은 MathJax를 통해 렌더링되며, 각 HTML 파일은 GitHub Pages에서 볼 수 있도록 작성되어 있습니다.
+
 
 ## 🔙 돌아가기
 
