@@ -8,6 +8,48 @@
     async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </script>
+  <style>
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      background-color: #fefefe;
+      color: #222;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-top: 2em;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 1.5em auto;
+      width: 80%;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 8px 12px;
+      text-align: center;
+    }
+
+    ul {
+      margin-left: 1.2em;
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
   <h1>🧠 중등부 1번: 두 개씩 곱하기 (4점)</h1>
@@ -24,14 +66,10 @@
     <li>⑤ 441</li>
   </ul>
 
-  <hr>
-
   <h2>✅ 풀이</h2>
-  <p>가능한 모든 \( (x, y) \) 쌍을 나열하여 \( x \times y \)를 구하고, 이들의 합을 계산합니다.</p>
-
   <p>총 조합 수는 \( \binom{6}{2} = 15 \)개입니다.</p>
 
-  <table border="1" cellpadding="4">
+  <table>
     <tr><th>x</th><th>y</th><th>x×y</th></tr>
     <tr><td>1</td><td>2</td><td>2</td></tr>
     <tr><td>1</td><td>3</td><td>3</td></tr>
@@ -50,38 +88,27 @@
     <tr><td>5</td><td>6</td><td>30</td></tr>
   </table>
 
-  <p>모두 더하면:</p>
-
   <p>
+    모두 더하면: <br>
     \( 2 + 3 + 4 + 5 + 6 + 6 + 8 + 10 + 12 + 12 + 15 + 18 + 20 + 24 + 30 = \boxed{175} \)
   </p>
 
-  <hr>
-
   <h2>💡 수학적 해법</h2>
-
-  <p>수식으로는 다음과 같이 표현할 수 있습니다:</p>
-
   <p>
     \[
     \sum_{1 \le x < y \le 6} x \cdot y = \frac{1}{2} \left( \left( \sum x \right)^2 - \sum x^2 \right)
     \]
   </p>
-
   <p>
-    - \( \sum x = 1 + 2 + 3 + 4 + 5 + 6 = 21 \) <br>
+    - \( \sum x = 1 + 2 + 3 + 4 + 5 + 6 = 21 \)<br>
     - \( \sum x^2 = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 + 6^2 = 91 \)
   </p>
-
   <p>
     \[
     \Rightarrow \frac{1}{2} (21^2 - 91) = \frac{1}{2} \cdot 350 = \boxed{175}
     \]
   </p>
 
-  <hr>
-
   <h2>🟢 정답: <strong>175</strong></h2>
-
 </body>
 </html>
