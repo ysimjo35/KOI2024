@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>중등부 2번 풀이</title>
+  <script type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      background-color: #fefefe;
+      color: #222;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      margin-top: 2em;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 1.5em auto;
+      width: 80%;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 8px 12px;
+      text-align: center;
+    }
+
+    ul {
+      margin-left: 1.2em;
+    }
+
+    ol {
+      margin-left: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 중등부 2번: 덧셈과 뺄셈 (5점)</h1>
+
+  <h2>📘 문제 요약</h2>
+  <p>
+    아래와 같은 수식이 있습니다.  
+    <br>
+    <strong>4 [ ] 2 [ ] 3 [ ] 5 [ ] 1 [ ] 4 [ ] 3 = 4</strong>
+  </p>
+  <p>
+    각 <code>[ ]</code>에는 <strong>덧셈 (+)</strong> 또는 <strong>뺄셈 (-)</strong>을 넣습니다.  
+    이 등식이 성립하도록 만드는 경우의 수를 구하세요.
+  </p>
+
+  <ul>
+    <li>① 3</li>
+    <li>② 4</li>
+    <li>③ 5</li>
+    <li>④ <strong>6 ✅</strong></li>
+    <li>⑤ 7</li>
+  </ul>
+
+  <h2>🧩 풀이</h2>
+
+  <p>
+    총 6개의 연산자 자리에 각각 <code>+</code> 또는 <code>-</code>를 넣을 수 있으므로, 가능한 경우의 수는  
+    \( 2^6 = 64 \)가지입니다.
+  </p>
+
+  <p>
+    이들 중에서 실제로 계산 결과가 \(4\)가 되는 경우만 하나하나 검토해 보면 다음과 같은 6가지 조합이 나옵니다:
+  </p>
+
+  <h3>✔️ 정답이 되는 6가지 조합 예시</h3>
+
+  <ol>
+    <li>4 - 2 + 3 + 5 - 1 - 4 - 3 = 4</li>
+    <li>4 - 2 - 3 + 5 + 1 - 4 + 3 = 4</li>
+    <li>4 + 2 + 3 - 5 + 1 - 4 + 3 = 4</li>
+    <li>4 + 2 - 3 - 5 + 1 + 4 + 3 = 4</li>
+    <li>4 - 2 - 3 + 5 + 1 + 4 - 3 = 4</li>
+    <li>4 - 2 + 3 - 5 + 1 + 4 + 3 = 4</li>
+  </ol>
+
+  <p>
+    이렇게 가능한 조합 중 정확히 <strong>6가지</strong>가 성립합니다.
+  </p>
+
+  <h2>🟢 정답: <strong>6</strong></h2>
+</body>
+</html>
